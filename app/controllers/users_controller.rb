@@ -19,7 +19,13 @@ class UsersController < ApplicationController
   # }
   def profile; end
 
-  def edit; end
+  def edit;
+    # check if api token associated if not add it
+    # add the api_keys on demands
+    if !current_user.api_key
+      current_user.generate_api_key()
+    end
+  end
 
   # Update a user profile. Only updates the current user
   #

@@ -55,6 +55,19 @@
     </div>
   </div>
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Manage API Access</h3>
+    </div>
+    <div class="panel-body">
+      <p>Your private token is used to access application resources without authentication.<strong>Keep it secret!</strong></p>
+      <div class="well">
+        <%= current_user.api_key %>
+      </div>
+    </div>
+  </div>
+
+
   <div class="panel panel-danger">
     <div class="panel-heading">
       <h3 class="panel-title">Danger zone</h3>
