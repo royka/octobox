@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   validates :github_id,    presence: true, uniqueness: true
   validates :access_token, presence: true, uniqueness: true
+  validates :api_key, presence: true, uniqueness: true
   validates :github_login, presence: true
   validates :refresh_interval, numericality: {
     only_integer: true,
@@ -105,4 +106,8 @@ class User < ApplicationRecord
     "#{'*' * 32}#{personal_access_token.slice(-8..-1)}"
   end
 
+  def generate_api_key
+      self.api_key = SecureRandom.hex
+      self.save
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170907022825) do
+ActiveRecord::Schema.define(version: 20171005133259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170907022825) do
     t.datetime "last_synced_at"
     t.string "personal_access_token"
     t.integer "refresh_interval", default: 0
+    t.string "api_key"
     t.index ["access_token"], name: "index_users_on_access_token", unique: true
     t.index ["github_id"], name: "index_users_on_github_id", unique: true
   end
